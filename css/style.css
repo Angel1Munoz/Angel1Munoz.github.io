@@ -1,10 +1,7 @@
-#main{
-    font-family: 'Burbank';
-}
-
-@fontface{
-    font-family: "Burbank";
-    src: url('BurbankBigCondensed-Black.otf') format('embedded-opentype'),
-    url('BurbankBigCondensed-Black.otf') format('open-type');
-
+body{
+    font-family: Courier New, monospace;
+    font-weight: 800;
+    background-image: url("../images/dog.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
