@@ -1,7 +1,47 @@
-body{
-    font-family: Courier New, monospace;
-    font-weight: 800;
-    background-image: url("../images/dog.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+.tableBottom {
+    outline-style:solid;
+    animation: fadeIn ease 2s
 }
+
+.navbar{
+    animation: fadeIn ease 2s
+}
+
+h1 {
+    float: left;
+    margin: 7px
+}
+
+.name1 {
+    animation-duration: 6s;
+    animation-name: fadeIn2
+}
+
+.name2 {
+    animation-duration: 10s;
+    animation-name: fadeIn2
+}
+
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@keyframes fadeIn2 {
+0% {opacity:0;}
+25% {opacity:0;}
+100% {opacity:1;}
+}
+
+.tabletextStyle {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align:center;
+}
+
+#tablePhotosV {
+    padding-left: 50px;
+    padding-right: 50px
+}
+
+
+
