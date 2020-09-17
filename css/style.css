@@ -1,6 +1,7 @@
 .tableBottom {
-    outline-style:solid;
-    animation: fadeIn ease 2s
+    outline-style: solid;
+    animation: fadeIn ease 2s;
+    float: left
 }
 
 .navbar{
@@ -22,6 +23,12 @@ h1 {
     animation-name: fadeIn2
 }
 
+.welcomeText {
+    animation-duration: 14s;
+    animation-name: fadeIn2;
+    float: left
+}
+
 @keyframes fadeIn {
 0% {opacity:0;}
 100% {opacity:1;}
@@ -39,9 +46,9 @@ h1 {
 }
 
 #tablePhotosV {
-    padding-left: 50px;
-    padding-right: 50px
+    padding-left: 140px;
 }
 
-
-
+#tablePhotos {
+    padding-left: 65px;
+}
