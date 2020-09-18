@@ -8,4 +8,9 @@
 }
 
 .amText {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.amPara {
+    font-size: 20px
 }
