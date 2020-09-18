@@ -8,19 +8,18 @@
     animation: fadeIn ease 2s
 }
 
-h1 {
+.name1 {
+    animation-duration: 6s;
+    animation-name: fadeIn2;
     float: left;
     margin: 7px
 }
 
-.name1 {
-    animation-duration: 6s;
-    animation-name: fadeIn2
-}
-
 .name2 {
     animation-duration: 10s;
-    animation-name: fadeIn2
+    animation-name: fadeIn2;
+    float: left;
+    margin: 7px
 }
 
 .welcomeText {
@@ -44,10 +43,19 @@ h1 {
     text-align:center;
 }
 
-#tablePhotosV {
-    padding-left: 140px;
+.tablePhotos {
+    text-align: center
 }
 
-#tablePhotos {
-    padding-left: 65px;
+#amTitle {
+    text-align: center
 }
+
+#amImage {
+    border: 5px solid; 
+    float: right
+}
+
+.amText {
+}
+
