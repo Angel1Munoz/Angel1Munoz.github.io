@@ -68,7 +68,7 @@
             <li class="dropdown">
                 <a href="#">Projects</a>
                 <ul class="dropdown-content">
-                    <li><a href="textadvenutre.html">Text Adventure</a></li>
+                    <li><a href="textadventure.html">Text Adventure</a></li>
                     <li><a href="#">Project 2</a></li>
                     <li><a href="#">Project 3</a></li>
                     <li><a href="#">Project 4</a></li>
@@ -84,8 +84,8 @@
             </div>
             <div id="right_pane">
                 <div id="story_text">
-                    <p id="p1">Hello! Welcome to the amazing world of Pokémon! Before we continue.</p>
-                    <p id="p2">What was your name again?</p>
+                    <p id="p1">text1</p>
+                    <p id="p2">text2</p>
 
                 
                 </div>
@@ -101,24 +101,25 @@
         <script>
             var b1 = document.getElementById("b1");
             var b2 = document.getElementById("b2");
-            var b2 = document.getElementById("b3");
-            var b2 = document.getElementById("b4");
+            var b3 = document.getElementById("b3");
+            var b4 = document.getElementById("b4");
             var img = document.getElementById("story_img");
             var p1 = document.getElementById("p1");
-            var p1 = document.getElementById("p2");
+            var p2 = document.getElementById("p2");
             var state = "intro";
+        
             intro();
 
             function intro(){
                 img.src = "images/profoak.png";
-                b1.innerHTML = "test1";
-                b2.innerHTML = "test2";
+                b1.innerHTML = "Enter Name";
+                b2.style.display = "none";
                 b3.style.display = "none";
                 b4.style.display = "none";
-                p1.innerHTML = "test text";
+                p1.innerHTML = "Hello! Welcome to the amazing world of Pokémon! Before we continue.";
                 p2.innerHTML = "What was your name again?";
             }
-
+  
             function stayInSchool(){
                 img.src="images/school.jpg";
                 p1.innerHTML = "Begin training for powers";
