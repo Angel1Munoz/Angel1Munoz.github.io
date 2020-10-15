@@ -142,6 +142,8 @@
                 p2.style.display = "inline";
                 b1.innerHTML = "Continue";
                 b2.style.display = "none";
+                p3.style.display = "none";
+                p4.style.display = "none";
             }
 
             function profOakEmb(){
@@ -157,6 +159,90 @@
                 b2.style.display = "none";
             }
 
+            function chooseStarter(){
+                img.src = "images/chooseStarter.png";
+                p1.innerHTML = "Lets start from left to right on the starters you can choose from.";
+                p2.innerHTML = "The first Pokémon you can choose from is Bulbasaur, the grass type Pokémon.";
+                p2.style.display = "block";
+                p3.innerHTML = "The second Pokémon you can choose from is Charmander, the fire type Pokémon.";
+                p3.style.display = "block";
+                p4.innerHTML = "The third Pokémon you can choose from is Squirtle, the water type Pokémon.";
+                p4.style.display = "block";
+                b1.innerHTML = "Bulbasaur";
+                b2.innerHTML = "Charmander";
+                b2.style.display = "inline";
+                b3.innerHTML = "Squirtle";
+                b3.style.display = "inline";
+            }
+
+            function bulbasaur(){
+                img.src = "images/bulbasaur.png";
+                p1.innerHTML = "Bulbasaur, what an excellent choice!"
+                p2.innerHTML = "Now, will you go on your adventure by foot or by the bus?"
+                p3.style.display = "none";
+                p4.style.display = "none";
+                b1.innerHTML = "I'll take the bus";
+                b2.innerHTML = "I'll travel on foot";
+                b3.style.display = "none";
+            }
+
+            function charmander(){
+                img.src = "images/charmander.png";
+                p1.innerHTML = "Charmander, what an excellent choice!"
+                p2.innerHTML = "Now, will you go on your adventure by foot or by the bus?"
+                p3.style.display = "none";
+                p4.style.display = "none";
+                b1.innerHTML = "I'll take the bus";
+                b2.innerHTML = "I'll travel on foot";
+                b3.style.display = "none";
+            }
+
+            function squirtle(){
+                img.src = "images/squirtle.png";
+                p1.innerHTML = "Squirtle, what an excellent choice!"
+                p2.innerHTML = "Now, will you go on your adventure by foot or by the bus?"
+                p3.style.display = "none";
+                p4.style.display = "none";
+                b1.innerHTML = "I'll take the bus";
+                b2.innerHTML = "I'll travel on foot";
+                b3.style.display = "none";
+            }
+
+            ////////Bus Route Below
+
+            function busRoute(){
+                img.src = "";
+            }
+
+            ///////Walking Route Below
+
+            function walkRoute(){
+                img.src = "images/walkroute.jpg";
+                p1.innerHTML = "You begin your journey through the forest, with your new Pokémon in your hand, you feel as if you can take any challenge thrown at you.";
+                p2.innerHTML = "And look at that! A wild Pokémon appears!";
+                p3.innerHTML = "Do you attempt to catch it?"
+                p3.style.display = "block";
+                b1.innerHTML = "Catch it";
+                b2.innerHTML = "Let it go";
+            }
+
+            function catchPoke1(){
+                img.src = "images/pidgey.jpg";
+                p1.innerHTML = "A Pidgey Appeared!";
+                p2.innerHTML = "What do you do?";
+                p3.style.display = "none";
+                b1.innerHTML = "Throw a Pokéball at it";
+                b2.innerHTML = "Sneak up to it";
+                b3.innerHTML = "Attack it with your Pokémon";
+                b3.style.display = "inline";
+            }
+
+            function throwPoke(){
+                img.src = "images/throwpokeball.jpg";
+                p1.innerHTML = "It escaped!";
+                p2.innerHTML = "Pidgey uses gust and blows your Pokémon away";
+
+            }
 
             ////////State Machine
             function bclick(button){
@@ -176,7 +262,44 @@
                         state="profOakEmb";
                     }
                 }
-                
+                else if (state == "profOakEmb"){
+                    if (button == 1){
+                        profOakExplain();
+                        state="profOakExplain";
+                    }
+                }
+                else if (state == "profOakExplain"){
+                    if (button == 1){
+                        chooseStarter();
+                        state="chooseStarter";
+                    }
+                }
+                else if (state == "chooseStarter"){
+                    if (button == 1){
+                        bulbasaur();
+                        state="bulbasaur";
+                    }
+                    else if (button == 2){
+                        charmander();
+                        state="charmander"
+                    }
+                    else if (button == 3){
+                        squirtle();
+                        state="squirtle";
+                    }
+                }
+                else if (state == "bulbasaur","charmander","squirtle"){
+                     if (button == 1){
+                        busRoute();
+                        state="busRoute"
+                    }
+                    else if (button == 2){
+                        walkRoute();
+                        state="walkRoute"
+                    }                    
+                }
+
+
 
                 
 
