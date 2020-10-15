@@ -86,14 +86,16 @@
                 <div id="story_text">
                     <p id="p1">text1</p>
                     <p id="p2">text2</p>
+                    <p id="p3">text3</p>
+                    <p id="p4">text4</p>
 
                 
                 </div>
                 <div id="button_choices">
-                    <a id="b1" class="buttons" href="#" onclick="bclick(1)">Yes</a>
-                    <a id="b2" class="buttons" href="#" onclick="bclick(2)">No</a>
-                    <a id="b3" class="buttons" href="#" onclick="bclick(3)">Yes</a>
-                    <a id="b4" class="buttons" href="#" onclick="bclick(4)">No</a>
+                    <a id="b1" class="buttons" href="#" onclick="bclick(1)"></a>
+                    <a id="b2" class="buttons" href="#" onclick="bclick(2)"></a>
+                    <a id="b3" class="buttons" href="#" onclick="bclick(3)"></a>
+                    <a id="b4" class="buttons" href="#" onclick="bclick(4)"></a>
                 </div>
             </div>
         </div>
@@ -106,52 +108,72 @@
             var img = document.getElementById("story_img");
             var p1 = document.getElementById("p1");
             var p2 = document.getElementById("p2");
+            var p3 = document.getElementById("p3");
+            var p4 = document.getElementById("p4");
             var state = "intro";
-        
+    
             intro();
 
             function intro(){
                 img.src = "images/profoak.png";
-                b1.innerHTML = "Enter Name";
+                b1.innerHTML = "Continue";
                 b2.style.display = "none";
                 b3.style.display = "none";
                 b4.style.display = "none";
-                p1.innerHTML = "Hello! Welcome to the amazing world of Pokémon! Before we continue.";
-                p2.innerHTML = "What was your name again?";
+                p1.innerHTML = "Hello! Welcome to the amazing world of Pokémon!";
+                p2.innerHTML = "It's so nice to finally meet you!";
+                p3.style.display = "none";
+                p4.style.display = "none";
             }
   
-            function stayInSchool(){
-                img.src="images/school.jpg";
-                p1.innerHTML = "Begin training for powers";
-                p2.innerHTML = "Meet other kids at the academy";
-                p3.innerHTML = "Would you like to try and escape";
-                b1.innerHTML = "Yes";
-                b2.innerHTML = "No";
-                b3.innerHTML = "Maybe";
+            function profOakDio(){
+                img.src = "images/profoak2.png";
+                p1.innerHTML = "My name's professor oak! I work here in this Pokémon research center, studying and learning about Pokémon all around.";
+                p2.style.display = "none";
+                b1.innerHTML = "Ask why you're here";
+                b2.innerHTML = "Ask what he does";
+                b2.style.display = "inline";
             }
 
-            function escape(){
-                img.src="images/cave.jpg";
-                p1.innerHTML = "You are in Mammoth Cave";
-                p2.innerHTML = "Watch out for the person in the cloak";
-                p3.innerHTML = "Would you like to Join or fight";
-                b1.innerHTML = "Join";
-                b2.innerHTML = "Fight";
-                b3.innerHTML = "block";
+            function profOakExplain(){
+                img.src = "images/starters.png";
+                p1.innerHTML = "Well, you're here cause you are now old enough to start your Pokémon adventure and choose your starter Pokémon.";
+                p2.innerHTML = "Obviously you'll have to know what your picking.";
+                p2.style.display = "inline";
+                b1.innerHTML = "Continue";
+                b2.style.display = "none";
             }
 
+            function profOakEmb(){
+                img.src = "images/profoakemb.png";
+                p1.innerHTML = "Well..";
+                p2.innerHTML = "You see... It's complicated.";
+                p2.style.display = "block";
+                p3.innerHTML = "I usua.. no wait I got this.";
+                p3.style.display = "block";
+                p4.innerHTML = "Look it's not important, lets just talk about why you're here in the first place.";
+                p4.style.display = "inline";
+                b1.innerHTML = "Continue";
+                b2.style.display = "none";
+            }
 
 
             ////////State Machine
             function bclick(button){
                 if (state == "intro"){
-                    if (button ==1){
-                        stayInSchool();
-                        state="stayInSchool";
+                    if (button == 1){
+                        profOakDio();
+                        state="profOakDio";
                     }
-                    else if(button == 2){
-                        goToCamp();
-                        state = "goToCamp";
+                }
+                else if (state == "profOakDio"){
+                    if (button == 1){
+                        profOakExplain();
+                        state="profOakExplain";
+                    }
+                    else if (button == 2){
+                        profOakEmb();
+                        state="profOakEmb";
                     }
                 }
                 
