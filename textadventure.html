@@ -591,15 +591,79 @@
                         teamrocketBus();
                         state="teamrocketBus"
                     }
-                    else if(state == "teamrocketBus"){
-                        if(button ==1){
-                            stayFight();
-                            state="stayFight"
-                        }
+                }
+                else if(state == "teamrocketBus"){
+                    if(button ==1){
+                        stayFight();
+                        state="stayFight"
+                    }
+                    else if(button ==2){
+                        rocketTalk();
+                        state="rocketTalk"
                     }
                 }
-
-
+                else if(state == "stayFight"){
+                    if(button ==1){
+                        rocketTalk();
+                        state="rocketTalk"
+                    }
+                    else if(button ==2){
+                        rocketRun();
+                        state="rocketRun"
+                    }
+                }
+                else if(state == "rocketTalk"){
+                    if(button ==1){
+                        rocketRun();
+                        state="rocketRun"
+                    }
+                    else if(button ==2){
+                        gohome();
+                        state="gohome"
+                    }
+                }
+                else if(state == "rocketRun"){
+                    if(button ==1){
+                        rocketReport();
+                        state="rocketReport"
+                    }
+                }
+                else if(state == "rocketReport"){
+                    if(button ==1){
+                        rocketArrest();
+                        state="rocketArrest"
+                    }
+                }
+                else if(state == "walkChooseCity"){
+                    if(button ==1){
+                        walkPewter();
+                        state="walkPewter"
+                    }
+                    else if(button ==2){
+                        walkCerulean();
+                        state="walkCerulean"
+                    }
+                }
+                else if(state == "walkPewter"){
+                    if(button ==1){
+                        endPewter();
+                        state="endPewter"
+                    }
+                }
+                else if(state == "walkCerulean"){
+                    if(button ==1){
+                        endCerulean();
+                        state="endCerulean"
+                    }
+                }
+                else if(state == "endPewter","endCerulean"){
+                    if(button ==1){
+                        intro();
+                        state="intro"
+                    }
+                }
+                
+                
 
                 
 
