@@ -424,10 +424,41 @@
             }
 
             /////////Pewter City 
-            
+
+            function walktoPewter(){
+                img.src = "images/"
+                p1.innerHTML = "As you walk to Pewter city, your starter evolves into their second evolution.";
+                p2.innerHTML = "You also catch two new Pokémon";
+                p2.style.display = "block";
+                b1.innerHTML = "Continue";
+                b2.style.display = "none";
+            }
+
+            function endPewter(){
+                img.src = "images/"
+                p1.interHTML = "You eventually defeat Pewter City Gym and claim the boulder badge";
+                p2.innerHTML = "Sadly, this marks the end of your trip, you've been through so much and have seen so much, it's time for you to clock in for the night and find a place to sleep";
+                p3.innerHTML = "As the sun sets, you walk to a hotel to spend the night, this isn't the end of your journey, it is just the beginning...";
+                p4.innerHTML = "The End (Ending 3/4)";
+            }
             /////////Cerulean City
 
+            function walktoCerulean(){
+                img.src = "images/"
+                p1.innerHTML = "As you walk to Cerulean city, your starter evolves into their second evolution.";
+                p2.innerHTML = "You also catch two new Pokémon";
+                p2.style.display = "block";
+                b1.innerHTML = "Continue";
+                b2.style.display = "none";
+            }
 
+            function endPewter(){
+                img.src = "images/"
+                p1.interHTML = "You eventually defeat Cerulean City Gym and claim the cascade badge";
+                p2.innerHTML = "Sadly, this marks the end of your trip, you've been through so much and have seen so much, it's time for you to clock in for the night and find a place to sleep";
+                p3.innerHTML = "As the sun sets, you walk to a hotel to spend the night, this isn't the end of your journey, it is just the beginning...";
+                p4.innerHTML = "The End (Ending 4/4)";
+            }
 
             ////////State Machine
             function bclick(button){
@@ -482,6 +513,90 @@
                         walkRoute();
                         state="walkRoute"
                     }                    
+                }
+                else if (state == "walkRoute"){
+                    if (button == 1){
+                        catchPoke1();
+                        state="catchPoke1"
+                    }
+                    else if (button ==2){
+                        walkChooseCity();
+                        state="walkChooseCity"
+                    }
+                }
+                else if (state == "catchPoke1"){
+                    if (button == 1){
+                        throwPoke();
+                        state="throwPoke"
+                    }
+                    else if (button == 2){
+                        sneakUp1();
+                        state="sneakUp1"
+                    }
+                    else if (button == 3){
+                        attackWild1();
+                        state="attackWild1"
+                    }
+                }
+                else if (state == "throwPoke","sneakUp1","attackWild1"){
+                    if (button == 1){
+                        pokeCenter();
+                        state="pokeCenter"
+                    }
+                }
+                else if (state == "busRoute"){
+                    if (button ==1){
+                        busconfirm();
+                        state="busconfirm"
+                    }
+                    else if (button ==2){
+                        walkChooseCity();
+                        state="walkChooseCity"
+                    }
+                }
+                else if (state == "busconfirm"){
+                    if(button ==1){
+                        busdirection();
+                        state="busdirection"
+                    }
+                }
+                else if (state == "busdirection"){
+                    if(button ==1){
+                        busBreaksDownC();
+                        state="busBreaksDownC"
+                    }
+                    else if(button ==2){
+                        busBreaksDownP();
+                        state="busBreaksDownP"
+                    }
+                }
+                else if (state == "busBreaksDownP","busBreaksDownC"){
+                    if(button ==1){
+                        stayBack();
+                        state="stayBack"
+                    }
+                }
+                else if (state == "stayBack"){
+                    if(button ==1){
+                        stayBack2();
+                        state="stayBack2"
+                    }
+                    else if(button ==2){
+                        helpBus();
+                        state="helpBus"
+                    }
+                }
+                else if(state == "stayBack2"){
+                    if(button ==1){
+                        teamrocketBus();
+                        state="teamrocketBus"
+                    }
+                    else if(state == "teamrocketBus"){
+                        if(button ==1){
+                            stayFight();
+                            state="stayFight"
+                        }
+                    }
                 }
 
 
